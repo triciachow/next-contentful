@@ -27,6 +27,7 @@ export async function getStaticProps({ params }) {
   const { items } = await client.getEntries({
     content_type: "recipe",
     "fields.slug": params.slug,
+    revalidate: 1
   });
 
   return {

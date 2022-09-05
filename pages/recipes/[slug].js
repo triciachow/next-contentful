@@ -27,6 +27,7 @@ export const getStaticPaths = async () => {
 export async function getStaticProps({ params }) {
   const { items } = await client.getEntries({
     content_type: "recipe",
+    // match the slug
     "fields.slug": params.slug,
   });
 
